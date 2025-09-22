@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Manux Intarface</title>
+</head>
+<body class="login">
+    <div class="box-container" id="login-box">
+        <h2>Welcome Back</h2>
+        <div class="input-box">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter Username">
+        </div>
+        <div class="input-box">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter Password">
+        </div>
+
+        <button class="btn" onclick="login()">Login</button>
+        <p class="msg" id="msg"></p>
+        <p class="msg" style="color: #ddd; font-weight: normal;"> 
+            Don't have an account?
+            <a href="#" onclick="showRegister()">Create one</a>
+        </p>
+    </div>
+
+    <div class="box-container hidden" id="register-box">
+        <h2>Create Account</h2>
+        <div class="input-box">
+            <label for="reg-username">Username</label>
+            <input type="text" id="reg-username" placeholder="Choose an Username">
+        </div>
+        <div class="input-box">
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" placeholder="Enter Email">
+        </div>
+
+        <div class="input-box">
+            <label for="reg-password">Password</label>
+            <input type="password" id="reg-password" placeholder="Create Password">
+        </div>
+
+        <div class="input-box">
+            <label for="reg-password2">Confirm Password</label>
+            <input type="password" id="reg-password2" placeholder="Confirm Password">
+        </div>
+
+        <button class="btn" onclick="register()">Register</button>
+        <p class="msg" id="reg-msg"></p>
+
+        <p class="msg" style="color: #ddd; font-weight: normal;">
+            Already hace an account?
+            <a href="#" onclick="showLogin()">Back to Login</a>
+        </p>
+    </div>
+
+    <script src="js/app.js"> </script>
+
+</body>
+</html>

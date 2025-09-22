@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>Users – Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="card">
+            <div class="titlebar">
+                <h1>👥 Users</h1>
+                <div class="subtitle">API:
+                    <span id="baseUrl">http://localhost:3000</span>
+                </div>
+            </div>
+        <div class="controls">
+            <label>Limit <input id="limit" type="number" min="1" max="100" value="10"></label>
+            <label>Offset <input id="offset" type="number" min="0" value="0"></label>
+            <button id="btnLoad">Search</button>
+            <span class="right pill" id="meta"></span>
+        </div>
+        <div id="msg" class="muted"></div>
+        <div style="overflow:auto">
+            <table>
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Created at</th>
+                <th>ID</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <!-- filas dinámicas -->
+            </tbody>
+            </table>
+        </div>
+        <div class="controls" style="margin-top:12px;">
+            <button id="prev">← Previous</button>
+            <button id="next">Next →</button>
+        </div>
+        <button class="btn" id="logoutBtn" type="button">Logout</button>
+        </div>
+    </div>
+    <script src="js/app.js"> </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+db.users.find({}, { name: 0, email: 0, username: 0, _id: 0 }).limit(10).toArray();

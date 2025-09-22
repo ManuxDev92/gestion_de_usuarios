@@ -1,0 +1,260 @@
+/* =========================
+    Variables y base
+   ========================= */
+:root { 
+    --bg: #000;
+    --panel: #1c1c1c;
+    --text: #e8ecf3;
+    --muted: #c6cbd3;
+    --line: #333;
+    --input-bg: #333;
+    --btn-grad-a: #dce3eb;
+    --btn-grad-b: #bfc7d1;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --ff: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, 'Poppins', sans-serif;
+}
+
+* { 
+    box-sizing: border-box; 
+}
+
+html, body { 
+    height: 100%; 
+}
+
+body{
+    margin:0;
+    color: var(--text);
+    font-family: var(--ff);
+    background: var(--bg);
+}
+
+/* =========================
+    LOGIN (solo en index.html)
+   ========================= */
+body.login{
+    background: url("../background/background_manux.png") no-repeat center/cover;
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+}
+
+.box-container{
+    background: rgba(255,255,255,0.1);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    border-radius: var(--radius);
+    padding: 40px;
+    width: min(90vw, 350px);
+    text-align: center;
+    box-shadow: var(--shadow);
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity:0; 
+        transform: translateY(-18px); 
+    }
+    
+    to { 
+        opacity:1; 
+        transform: translateY(0); 
+    }
+}
+
+/* título login */
+.box-container h2 {
+    color:#fff;
+    margin:0 0 20px 0;
+}
+
+/* formulario login/register */
+.input-box { 
+    width: 100%; 
+    margin-bottom: 18px; 
+    text-align:left; 
+}
+
+.input-box label {
+    color:#fff; 
+    font-weight:700; 
+    display:block; 
+    margin-bottom:6px;
+}
+
+.input-box input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.2);
+    color:#fff; 
+    font-size:16px; 
+    outline:none; 
+    transition:.2s;
+}
+
+.input-box input:focus {
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 10px #E4EBF2;
+}
+
+.msg { 
+    margin-top: 12px; 
+    font-size: 14px; 
+    font-weight:700; 
+    color: yellow; 
+}
+
+.hidden { 
+    display:none; 
+}
+
+/* botón reutilizable */
+.btn {
+    display:inline-block;
+    padding:12px 16px;
+    border:none;
+    border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, #A8B5BF, #E4EBF2);
+    color:#000;
+    font-size:16px; font-weight:700;
+    cursor:pointer; transition: transform .15s ease, opacity .15s ease;
+}
+
+.btn:hover { 
+    transform: scale(1.03); 
+}
+
+.btn:disabled { 
+    opacity:.6; 
+    cursor:not-allowed; 
+}
+
+/* =========================
+DASHBOARD (dashboard_users.html)
+   ========================= */
+
+/* contenedor centrado */
+.wrap {
+    max-width: 980px;
+    margin: 40px auto;
+    padding: 0 16px;
+    display:flex; justify-content:center;
+}
+
+/* card principal */
+.card {
+    background: var(--panel);
+    border-radius: var(--radius);
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: var(--shadow);
+}
+
+/* cabecera de la card */
+.titlebar { 
+    text-align:center; 
+    margin-bottom: 16px; 
+}
+
+.titlebar h1 {
+    margin:0 0 6px 0; 
+    font-size: 28px; 
+    line-height:1.2; 
+    color:#fff; 
+    letter-spacing:.3px;
+}
+
+.titlebar .subtitle { 
+    color: var(--muted); 
+    font-size:13px; 
+    opacity:.9; 
+}
+
+/* controles superiores */
+.controls {
+    display: flex; 
+    gap: 12px; 
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 16px; 
+    flex-wrap: wrap;
+}
+
+.controls input{
+    background: var(--input-bg); 
+    border:none; 
+    border-radius: var(--radius-sm);
+    padding: 10px; 
+    color: var(--text); 
+    outline:none;
+}
+
+.controls input::placeholder { 
+    color:#999; 
+}
+
+
+/* si usas .btn también aquí, no necesitas estos, pero dejo helper por si no añades la clase */
+.controls button {
+    background: linear-gradient(to right, var(--btn-grad-a), var(--btn-grad-b));
+    border:none; 
+    color:#111; 
+    padding:10px 16px; 
+    border-radius: var(--radius-sm);
+    cursor:pointer; 
+    font-weight:600; 
+    transition: transform .15s ease, opacity .15s ease;
+}
+
+.controls button:hover { 
+    transform: scale(1.03); 
+}
+
+.controls button:disabled { 
+    opacity:.6; 
+    cursor:not-allowed; 
+}
+
+/* tabla */
+table { 
+    width:100%; 
+    border-collapse:collapse; 
+    margin-top: 12px; 
+}
+
+th, td { 
+    text-align:left; 
+    padding:12px; 
+    border-bottom:1px 
+    solid var(--line); 
+}
+
+th { 
+    font-weight:600; 
+    color:#fff; 
+}
+
+td { 
+    color:#ddd; 
+}
+
+/* paginación */
+.pagination { 
+    display: flex; 
+    justify-content: center; 
+    gap:12px; 
+    margin-top: 16px; 
+}
+
+/* mensajes */
+#msg { 
+    margin-top: 10px; 
+    font-size: 14px; 
+    text-align: center; 
+}
